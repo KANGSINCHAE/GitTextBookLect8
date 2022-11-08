@@ -15,7 +15,9 @@
 ### 1-3. 병합 방식
 - 병합에 있어서 상대적인 기준을 판별하는 알고리즘이 존재한다.
 - Fast-Forward와, 3-way 병합 방식을 제공한다.
-[실습 사진 첨부]
+
+#### 실습 전 준비
+<img width="416" alt="ㄱ" src="https://user-images.githubusercontent.com/101856066/200574247-dde5b86f-9eb3-4c81-9663-76bd5df49033.png">
 
 
 # 2. Fast-Foward 병합
@@ -25,18 +27,25 @@
 - 이러한 순차적 커밋에 맞추어 병합을 처리하는 방식임
 
 ### 2-1. 브랜치 생성 및 수정 작업
-[실습 사진 첨부]
+<img width="416" alt="ㄴ" src="https://user-images.githubusercontent.com/101856066/200574319-0df94778-473b-44ef-80e4-7b0348b77221.png">
+<img width="185" alt="ㄷ" src="https://user-images.githubusercontent.com/101856066/200574402-b426de9a-ea91-4b09-bcf3-250dde3fbd68.png">
+<img width="414" alt="ㅁ" src="https://user-images.githubusercontent.com/101856066/200574564-60cdb554-933b-47ba-a70f-ae883f6caca7.png">
+<img width="411" alt="ㄹ" src="https://user-images.githubusercontent.com/101856066/200574598-330cb274-3eae-4bd1-8758-1e56f8499203.png">
+<img width="369" alt="ㅂ" src="https://user-images.githubusercontent.com/101856066/200574763-82e01ee0-5db2-4246-a36f-549d913a74b9.png">
 
 ### 2-2. 병합 위치
 - git의 merge 명령어는 브랜치를 병합함. 현재 브랜치를 기준으로 다른 브랜치의 모든 커밋을 병합함
 - 명령어 형식은 __git merge 브랜치이름__ 형태로 사용하면 됨.
 - 기준과 대상이 있어야 하는데, 기준은 체크아웃된 현재 브랜치, 대상은 병합하고자 하는 브랜치를 의미한다.
-[실습 사진 첨부]
+<img width="412" alt="ㅅ" src="https://user-images.githubusercontent.com/101856066/200575144-e1e7e28d-d837-46ce-8662-9e678a56d8dc.png">
+
 
 ### 2-3. Fast-Forward 병합 적용
 - 병합 메시지에 Fast-Forward 방식으로 적용 되었다고 출력된다.
 - git log를 찍어보면 작업한 브랜치의 시작 커밋을 원본 브랜치 이후의 커밋으로 가리키는 것을 확인할 수 있다.
-[실습 사진 첨부]
+ <img width="315" alt="ㅇ" src="https://user-images.githubusercontent.com/101856066/200575247-160b9ddc-48e9-49d1-ad7e-76e45a50c0b4.png">
+ <img width="253" alt="ㅈ" src="https://user-images.githubusercontent.com/101856066/200575690-07804d3f-8c07-41d4-a50a-a089c7d22d06.png">
+
 - 이를 통해 Fast-Forward 병합은 병합할 하나의 브랜치 파일을 기준 브랜치로 복사하여 수정된 파일을 원본에 그대로 적용한 것과 같다는 점을 알 수 있다.
 
 # 3. 3-way 병합
@@ -46,11 +55,15 @@
 ### 3-1. 브랜치 생성과 수정 작업
 - Fast-Forward 병합과 유사.
 - Fast-Forward 병합에서는 생성한 브랜치에만 수정과 커밋을 했고, 원본 master 브랜치에서는 어떤 작업도 하지 않았다.
-[실습 사진 첨부]
+<img width="413" alt="ㅊ" src="https://user-images.githubusercontent.com/101856066/200575965-ef562d37-cd2c-4946-a3b1-0f2bf5444289.png">
+<img width="415" alt="ㅋ" src="https://user-images.githubusercontent.com/101856066/200576018-301cbe4d-5c82-401f-8180-a3808fd77fd2.png">
+<img width="232" alt="ㅌ" src="https://user-images.githubusercontent.com/101856066/200576062-27322d10-f50d-46c5-8f2d-54913b655b19.png">
 
 ### 3-2. 마스터 변경
 - 기준 커밋에서 서로 다른 브랜치의 커밋이 연결됨.
-[실습 사진 첨부]
+<img width="410" alt="ㅍ" src="https://user-images.githubusercontent.com/101856066/200576211-2afbf5bf-354b-41aa-9c3b-8d057ccfaada.png">
+<img width="414" alt="ㅎ" src="https://user-images.githubusercontent.com/101856066/200576265-bec8778e-02e6-4634-8755-8e5398a07ff9.png">
+<img width="182" alt="가" src="https://user-images.githubusercontent.com/101856066/200576319-149aa91f-8478-48b1-a125-ed297f24d8e3.png">
 
 ### 3-3. 공통 조상
 - 브랜치 모양이 갈라지는 형태로 나뉠 때는 Fast-Forward 방식의 알고리즘을 적용 불가하며 3-way방식을 이용하야 함.
@@ -63,14 +76,17 @@
 - 병합을 성공적으로 완료한 후에는 새로운 커밋을 추가로 하나 생성.
 - 새로 생성된 커밋을 병합 커밋이라고 부름.
 - 병합 커밋은 부모 커밋이 2개라는 특징이 있다.
-[실습 사진 첨부]
+<img width="346" alt="나" src="https://user-images.githubusercontent.com/101856066/200576398-d627dbef-acfc-4225-b14a-a1602b651a3a.png">
+<img width="219" alt="다" src="https://user-images.githubusercontent.com/101856066/200576407-c7c91494-2410-48d0-ac1b-fdc67d29cc89.png">
+
 
 ### 3-5. 병합 메시지
 - 3-way 병합은 Fast-Forward 병합과 달리 병합 메시지가 필요.
 - 깃은 두 브랜치를 병합한 후에 새로운 커밋을 하면서 동시에 메시지를 자동 생성.
 - 자동으로 작성되는 메시지 외에 직접 커밋 메시지를 작성할 수 있다. merge 명령어를 실행 할 때 -e 또는 --edit 사용.
 - 병합 메시지를 입력할 수 있는 vi 에디터 차잉 열림
-[실습 사진 첨부]
+<img width="460" alt="라" src="https://user-images.githubusercontent.com/101856066/200576520-0a33a95c-c79e-46b9-a6f5-607c06a9a412.png">
+<img width="310" alt="마" src="https://user-images.githubusercontent.com/101856066/200576531-fde5b58d-242e-4c4e-813b-36a08e96e16c.png">
 
 
 # 4. 브랜치 삭제
@@ -80,6 +96,6 @@
 - 중복되는 커밋을 가지는 별도의 브랜치를 유지할 필요가 없다. 따라서 불필요한 브랜치는 삭제를 해준다.
 - 브랜치를 삭제할 때는 -d 옵션을 사용. -d 옵션은 병합을 완료한 브랜치만 삭제 가능.
 - 병합을 완료하지 않은 브랜치를 삭제하고 싶다면 대문자 -D 옵션을 사용.
-[실습 사진 첨부]
+<img width="307" alt="바" src="https://user-images.githubusercontent.com/101856066/200576548-be245ad2-65bc-46ae-928c-111c533cf622.png">
 
 
